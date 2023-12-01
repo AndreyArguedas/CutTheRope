@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Link : MonoBehaviour
 {
-	private Rigidbody linkRigidBody;
-	private Collider linkCollider;
 	public string siblingToKeep = "Ball";
 	
     // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log("start.");
     }
 
     // Update is called once per frame
@@ -20,25 +17,14 @@ public class Link : MonoBehaviour
         
     }
 	
-	void onTriggerEnter(Collider other){
-		Debug.Log("onTriggerEnter.");
-		if(other.CompareTag("Player")){
-			KeepOnlyOneSibling();
-			Destroy(this);
-		}
-	}
 	
 	void OnCollisionEnter2D(Collision2D collision)
     {
-		Debug.Log("Collision with Player detected!");
         // Check if the collision involves a GameObject with the tag "Player"
         if (collision.gameObject.CompareTag("Player"))
         {
-            
-
-            // You can perform actions, such as scoring points, playing a sound, etc.
-            // For example, let's destroy the player GameObject in this case:
-            //Destroy(collision.gameObject);
+           KeepOnlyOneSibling();
+		   Destroy(this);
         }
     }
 	
