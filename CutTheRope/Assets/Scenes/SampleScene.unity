@@ -800,8 +800,8 @@ GameObject:
   m_Component:
   - component: {fileID: 605282616}
   - component: {fileID: 605282615}
-  - component: {fileID: 605282618}
   - component: {fileID: 605282617}
+  - component: {fileID: 605282618}
   m_Layer: 0
   m_Name: star2
   m_TagString: Untagged
@@ -923,7 +923,7 @@ CircleCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_CompositeOperation: 1
+  m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0.000000037252903, y: 0}
   m_Radius: 0.985
@@ -1232,7 +1232,7 @@ CircleCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_CompositeOperation: 1
+  m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0.000000037252903, y: 0}
   m_Radius: 0.985
@@ -1246,8 +1246,8 @@ GameObject:
   m_Component:
   - component: {fileID: 840430788}
   - component: {fileID: 840430787}
-  - component: {fileID: 840430790}
   - component: {fileID: 840430789}
+  - component: {fileID: 840430790}
   m_Layer: 0
   m_Name: star3
   m_TagString: Untagged
@@ -1369,7 +1369,7 @@ CircleCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_CompositeOperation: 1
+  m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0.000000037252903, y: 0}
   m_Radius: 0.985

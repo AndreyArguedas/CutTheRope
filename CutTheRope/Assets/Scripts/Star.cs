@@ -25,7 +25,17 @@ public class Star : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    // This method is called when another collider enters the trigger collider.
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.name == "Ball")
+        {
+            moveStarToCounter(destination);
+        }
+    }
+
+
+    /*void OnCollisionEnter2D(Collision2D collision)
     {
         // Check if the collision involves a GameObject with the tag "Player"
         if (collision.gameObject.name == "Ball")
@@ -33,7 +43,7 @@ public class Star : MonoBehaviour
            myCollider.enabled = false;
            moveStarToCounter(destination);
         }
-    }
+    }*/
 
     void moveStarToCounter(GameObject gameObject){
 		Vector2 position = gameObject.transform.position;
