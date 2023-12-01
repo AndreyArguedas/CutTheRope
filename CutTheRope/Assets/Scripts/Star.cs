@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class Star : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject destination;
+    private Collider2D myCollider;
+
     void Start()
     {
-        
+        // Get the Collider2D component attached to the GameObject
+        myCollider = GetComponent<Collider2D>();
+
+        // Check if the Collider2D component exists
+        if (myCollider == null)
+        {
+            Debug.LogError("Collider2D not found on GameObject: " + gameObject.name);
+        }
     }
 
     // Update is called once per frame
@@ -15,4 +24,19 @@ public class Star : MonoBehaviour
     {
         
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if the collision involves a GameObject with the tag "Player"
+        if (collision.gameObject.name == "Ball")
+        {
+           myCollider.enabled = false;
+           moveStarToCounter(destination);
+        }
+    }
+
+    void moveStarToCounter(GameObject gameObject){
+		Vector2 position = gameObject.transform.position;
+		transform.position = position;
+	}
 }
