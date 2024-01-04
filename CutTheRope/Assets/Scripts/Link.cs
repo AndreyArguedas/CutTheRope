@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Link : MonoBehaviour
 {
-	public string siblingToKeep = "Ball";
+	//public string siblingToKeep = "Ball";
 	
     // Start is called before the first frame update
     void Start()
@@ -40,8 +40,10 @@ public class Link : MonoBehaviour
             {
                 Transform child = parentTransform.GetChild(i);
 
+                Destroy(child.gameObject);
+
                 // Check if the sibling's name matches the one to keep
-                if (child.name == siblingToKeep && child != transform)
+                /*if (child.name == siblingToKeep && child != transform)
                 {
                     // If it matches, destroy all other siblings
                     for (int j = 0; j < childCount; j++)
@@ -54,7 +56,7 @@ public class Link : MonoBehaviour
 
                     // Break the loop since we have found and kept the specified sibling
                     break;
-                }
+                }*/
             }
         }
         else
