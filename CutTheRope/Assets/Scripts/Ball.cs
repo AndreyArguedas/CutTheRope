@@ -25,7 +25,6 @@ public class Ball : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision enter: " + collision.gameObject.name);
         // Check if the collision involves a GameObject with the tag "Player"
         if (collision.gameObject.name == "MainCharacter")
         {

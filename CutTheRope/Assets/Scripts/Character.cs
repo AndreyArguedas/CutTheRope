@@ -28,17 +28,6 @@ public class Character : MonoBehaviour
         }
     }
 
-    // This method is called when another collider enters the trigger collider.
-    /*private void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Object found: " + other.name);
-        if (other.name == "Ball")
-        {
-            // Trigger the animation by setting the parameter
-            animator.SetTrigger("BiteCollision");
-        }
-    }*/
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision enter from main character: " + collision.gameObject.name);

@@ -34,17 +34,6 @@ public class Star : MonoBehaviour
         }
     }
 
-
-    /*void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Check if the collision involves a GameObject with the tag "Player"
-        if (collision.gameObject.name == "Ball")
-        {
-           myCollider.enabled = false;
-           moveStarToCounter(destination);
-        }
-    }*/
-
     void moveStarToCounter(GameObject gameObject){
 		Vector2 position = gameObject.transform.position;
 		transform.position = position;
