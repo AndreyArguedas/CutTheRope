@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour
 {
@@ -31,6 +32,17 @@ public class Ball : MonoBehaviour
            myCollider.enabled = false;
            objectRenderer.enabled = false;
         }
+
+        // Check if the collision involves a GameObject with the tag "Player"
+        if (collision.gameObject.name == "Ground")
+        {
+           // Get the current scene index
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+            // Reload the current scene
+            SceneManager.LoadScene(currentSceneIndex);
+        }
+   
     }
 
     // Update is called once per frame
