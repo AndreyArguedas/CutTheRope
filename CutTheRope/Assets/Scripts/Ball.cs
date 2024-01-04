@@ -31,6 +31,7 @@ public class Ball : MonoBehaviour
         {
            myCollider.enabled = false;
            objectRenderer.enabled = false;
+           SceneController.instance.NextLevel();
         }
 
         // Check if the collision involves a GameObject with the tag "Player"
