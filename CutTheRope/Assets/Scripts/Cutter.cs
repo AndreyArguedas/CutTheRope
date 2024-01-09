@@ -4,7 +4,22 @@ using UnityEngine;
 
 public class Cutter : MonoBehaviour
 {
+    public GameObject objectToIgnore;
 
+    void Start()
+    {
+        // Check if the GameObject with the specified tag exists
+        if (objectToIgnore != null)
+        {
+            // Ignore collisions between this GameObject and the specified GameObject
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), objectToIgnore.GetComponent<Collider2D>(), true);
+        }
+        else
+        {
+            // Log a warning if the GameObject with the specified tag is not found
+            Debug.LogWarning("GameObject to ignore not found.");
+        }
+    }
     // Update is called once per frame
     void Update()
     {

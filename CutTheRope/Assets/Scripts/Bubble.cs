@@ -12,11 +12,16 @@ public class Bubble : MonoBehaviour
 
     public GameObject ball;
 
+    private Renderer objectRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
         // Get the Rigidbody component attached to the GameObject
         rb = GetComponent<Rigidbody2D>();
+
+        // Get the Renderer component attached to the GameObject
+        objectRenderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -32,9 +37,19 @@ public class Bubble : MonoBehaviour
         {
             liftBubble();
         }
+        if (other.name == "Cutter")
+        {
+            destroyBubble();
+        }
     }
 
-    // This method is called when another collider enters the trigger collider.
+    private void destroyBubble()
+    {
+        objectRenderer.enabled = false;
+        ball.GetComponent<Rigidbody2D>().gravityScale = 0.55f;
+        Destroy(this);
+    }
+
     private void liftBubble()
     {
         rb.gravityScale = -gravityScaleValue;

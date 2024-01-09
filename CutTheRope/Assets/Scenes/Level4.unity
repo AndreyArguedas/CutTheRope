@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9153180974867196625, guid: 9395252617f1f7e4f8db34cc76f3e80d, type: 3}
+      propertyPath: objectToIgnore
+      value: 
+      objectReference: {fileID: 699691280}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -589,7 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabbb37b354e841478173b8ac063110e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityScaleValue: -0.1
+  gravityScaleValue: 0.1
   ball: {fileID: 699691280}
 --- !u!1001 &630746046
 PrefabInstance:
