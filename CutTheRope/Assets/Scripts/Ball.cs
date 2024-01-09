@@ -8,6 +8,7 @@ public class Ball : MonoBehaviour
 
     private Collider2D myCollider;
     private Renderer objectRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,7 @@ public class Ball : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Check if the collision involves a GameObject with the tag "Player"
+        // Check if the collision involves a GameObject with the name "MainCharacter"
         if (collision.gameObject.name == "MainCharacter")
         {
            myCollider.enabled = false;
@@ -34,7 +35,7 @@ public class Ball : MonoBehaviour
            SceneController.instance.NextLevel();
         }
 
-        // Check if the collision involves a GameObject with the tag "Player"
+        // Check if the collision involves a GameObject with the name "Ground"
         if (collision.gameObject.name == "Ground")
         {
            // Get the current scene index
