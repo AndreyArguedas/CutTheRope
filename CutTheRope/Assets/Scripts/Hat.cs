@@ -20,15 +20,6 @@ public class Hat : MonoBehaviour
         }
     }
 
-    /*void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Check if the collision involves a GameObject with the tag "Player"
-        if (collision.gameObject.name == "Ball")
-        {
-           teleportToDestination(collision.gameObject);
-        }
-    }*/
-
     // This method is called when another collider enters the trigger collider.
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -36,6 +27,10 @@ public class Hat : MonoBehaviour
         if (other.name == "Ball")
         {
             teleportToDestination(other.gameObject);
+        }
+        if (other.name == "Bubble")
+        {
+            Destroy(other.gameObject);
         }
     }
 
