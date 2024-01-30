@@ -36,17 +36,8 @@ public class Ball : MonoBehaviour
         }
 
         // Check if the collision involves a GameObject with the name "Ground"
-        if (collision.gameObject.name == "Ground")
-        {
-           // Get the current scene index
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-            // Reload the current scene
-            SceneManager.LoadScene(currentSceneIndex);
-        }
-
-        // Check if the collision involves a GameObject with the name "Obstacle"
-        if (collision.gameObject.name == "Obstacle")
+        if (collision.gameObject.name == "Ground" || 
+            collision.gameObject.name == "Obstacle")
         {
            // Get the current scene index
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
